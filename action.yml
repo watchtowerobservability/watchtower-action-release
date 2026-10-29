@@ -1,0 +1,41 @@
+name: 'Watchtower Release'
+description: 'Create a Watchtower release, upload source maps, record a deploy and finalize it.'
+author: 'Watchtower'
+branding:
+  icon: upload-cloud
+  color: blue
+inputs:
+  project:
+    description: 'Project id (or set WT_PROJECT).'
+    required: false
+  environment:
+    description: 'Environment name to record the deploy in, for example production. Created if missing. Omit to skip the deploy.'
+    required: false
+  release:
+    description: 'Release version. Defaults to the commit SHA.'
+    required: false
+  sourcemaps:
+    description: 'Space or newline separated directories (or files) holding .map and debug-id-stamped .js files to upload.'
+    required: false
+  url_prefix:
+    description: 'Prefix stored in front of each uploaded file name, for example ~/static.'
+    required: false
+    default: ''
+  dist:
+    description: 'Build output directory that sourcemaps paths are relative to.'
+    required: false
+    default: '.'
+  api_url:
+    description: 'Watchtower API base URL (or WT_API_URL).'
+    required: false
+    default: 'https://api.watchtower.observer'
+  finalize:
+    description: 'Mark the deploy succeeded (true) or leave it started (false).'
+    required: false
+    default: 'true'
+outputs:
+  release:
+    description: 'The release version that was created.'
+runs:
+  using: 'node20'
+  main: 'src/main.js'
