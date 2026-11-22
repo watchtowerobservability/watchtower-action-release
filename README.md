@@ -32,7 +32,7 @@ Add the step to a workflow (see `examples/workflow.yml`) and store your key as t
 | `sourcemaps` | none | Space/newline separated directories or files (`.map`, and `.js` carrying `//# debugId=`) |
 | `url_prefix` | empty | Prefix for stored file names, e.g. `~/static` |
 | `dist` | `.` | Build output directory that `sourcemaps` paths are relative to |
-| `api_url` | `https://api.watchtower.observer` | API base (`WT_API_URL` also works) |
+| `api_url` | `https://watchtowerops.net` | API base (`WT_API_URL` also works) |
 | `finalize` | `true` | `false` leaves the deploy `started` |
 
 Secret: `WT_AUTH_TOKEN` (never logged; masked in errors). Output: `release`.

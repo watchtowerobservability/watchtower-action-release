@@ -28,7 +28,7 @@ inputs:
   api_url:
     description: 'Watchtower API base URL (or WT_API_URL).'
     required: false
-    default: 'https://api.watchtower.observer'
+    default: 'https://watchtowerops.net'
   finalize:
     description: 'Mark the deploy succeeded (true) or leave it started (false).'
     required: false

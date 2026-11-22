@@ -104,7 +104,7 @@ async function run(env, log = console.log) {
   const sha = env.GITHUB_SHA || git('rev-parse', 'HEAD');
   const version = inp('release') || sha;
   if (!version) throw new Error('release input is required outside a git checkout');
-  const call = client(inp('api_url') || env.WT_API_URL || 'https://api.watchtower.observer', key, project);
+  const call = client(inp('api_url') || env.WT_API_URL || 'https://watchtowerops.net', key, project);
   const json = { 'content-type': 'application/json' };
 
   const commits = sha ? commitRange(sha, env.GITHUB_REPOSITORY || '') : [];
